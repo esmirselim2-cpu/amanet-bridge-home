@@ -385,7 +385,7 @@ export const translations = {
       msg: "Hallo. Ich interessiere mich für den AMANET-Service für meine Eltern in Srebrenik und hätte gerne weitere Informationen.",
     },
   },
-} as const;
+};
 
 export type Dict = typeof translations.bs;
 
