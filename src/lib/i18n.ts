@@ -89,7 +89,7 @@ export const translations = {
       items: [
         {
           name: "AMANET BASIC",
-          price: "199",
+          price: "99",
           for: "Namijenjeno roditeljima koji su uglavnom samostalni.",
           features: [
             "2 posjete mjesečno",
@@ -102,7 +102,7 @@ export const translations = {
         },
         {
           name: "AMANET STANDARD",
-          price: "399",
+          price: "199",
           for: "Porodicama koje žele sedmični kontakt sa roditeljima.",
           features: [
             "4 posjete mjesečno",
@@ -116,7 +116,7 @@ export const translations = {
         },
         {
           name: "AMANET PREMIUM",
-          price: "699",
+          price: "349",
           for: "Porodicama kojima je potreban češći kontakt i podrška.",
           features: [
             "8 posjeta mjesečno",
@@ -280,7 +280,7 @@ export const translations = {
       items: [
         {
           name: "AMANET BASIC",
-          price: "199",
+          price: "99",
           for: "Für Eltern, die größtenteils selbstständig sind.",
           features: [
             "2 Besuche pro Monat",
@@ -293,7 +293,7 @@ export const translations = {
         },
         {
           name: "AMANET STANDARD",
-          price: "399",
+          price: "199",
           for: "Für Familien, die wöchentlichen Kontakt zu ihren Eltern wünschen.",
           features: [
             "4 Besuche pro Monat",
@@ -307,7 +307,7 @@ export const translations = {
         },
         {
           name: "AMANET PREMIUM",
-          price: "699",
+          price: "349",
           for: "Für Familien, die häufigeren Kontakt und Unterstützung benötigen.",
           features: [
             "8 Besuche pro Monat",
