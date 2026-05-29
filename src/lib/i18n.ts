@@ -83,7 +83,7 @@ export const translations = {
     },
     packages: {
       title: "Odaberite nivo podrške koji odgovara vašoj porodici.",
-      monthly: "KM mjesečno",
+      monthly: "€ mjesečno",
       popular: "Najpopularniji",
       cta: "Pošaljite upit",
       items: [
