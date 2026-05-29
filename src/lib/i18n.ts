@@ -274,7 +274,7 @@ export const translations = {
     },
     packages: {
       title: "Wählen Sie das Unterstützungsniveau, das zu Ihrer Familie passt.",
-      monthly: "KM monatlich",
+      monthly: "€ monatlich",
       popular: "Beliebteste Wahl",
       cta: "Anfrage senden",
       items: [
