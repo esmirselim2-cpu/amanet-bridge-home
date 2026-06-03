@@ -10,8 +10,9 @@ export const translations = {
       title: "Vaši roditelji nisu sami kada vi niste tu.",
       subtitle:
         "AMANET pomaže porodicama iz dijaspore da brinu o svojim roditeljima u Srebreniku i okolini kroz redovne posjete, kupovinu lijekova i namirnica, plaćanje računa, pratnju doktoru i transparentno izvještavanje.",
-      cta1: "Zakažite informativni poziv",
+      cta1: "Pišite na WhatsApp",
       cta2: "Pošaljite upit",
+
       note: "Trenutno dostupno za područje Srebrenika i okoline.",
       slogan: "Kad vi niste tu, mi jesmo.",
     },
@@ -198,8 +199,9 @@ export const translations = {
       title: "Ihre Eltern sind nicht allein, wenn Sie nicht da sein können.",
       subtitle:
         "AMANET unterstützt Familien aus der Diaspora bei der Betreuung ihrer Eltern in Srebrenik und Umgebung — durch regelmäßige Besuche, Einkauf von Medikamenten und Lebensmitteln, Begleichung von Rechnungen, Arztbegleitung und transparente Berichte.",
-      cta1: "Informationsgespräch vereinbaren",
+      cta1: "Per WhatsApp schreiben",
       cta2: "Anfrage senden",
+
       note: "Derzeit verfügbar für Srebrenik und Umgebung.",
       slogan: "Wenn Sie nicht da sein können, sind wir da.",
     },
