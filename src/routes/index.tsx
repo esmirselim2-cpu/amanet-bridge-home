@@ -14,17 +14,17 @@ import {
   Pill,
   ShoppingBasket,
   MessageCircle,
-  Calendar,
   ChevronDown,
   Sparkles,
   Users,
-  HandHeart,
 } from "lucide-react";
 import { I18nContext, translations, type Lang, useI18n } from "@/lib/i18n";
 import heroImg from "@/assets/hero-elderly.jpg";
 import srebrenikImg from "@/assets/srebrenik.jpg";
 import visitImg from "@/assets/visit.jpg";
 import handsImg from "@/assets/hands.jpg";
+import logoAsset from "@/assets/amanet-logo.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/")({
 const WA_NUMBER = "38761293897";
 const WA_LINK = (msg: string) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 const EMAIL = "amanetsrebrenik@gmail.com";
-const CALENDLY_LINK = "[CALENDLY_LINK]";
+
 
 function IndexPage() {
   const [lang, setLang] = useState<Lang>("bs");
@@ -73,8 +73,8 @@ function IndexPage() {
           <Packages />
           <Capacity />
           <FAQ />
-          <Schedule />
           <LeadForm />
+
           <Contact />
         </main>
         <Footer />
@@ -135,9 +135,13 @@ function Nav() {
 function Logo() {
   return (
     <div className="flex items-center gap-2.5">
-      <div className="h-9 w-9 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-soft">
-        <HandHeart className="w-4.5 h-4.5" strokeWidth={1.8} />
-      </div>
+      <img
+        src={logoAsset.url}
+        alt="AMANET"
+        width={40}
+        height={40}
+        className="h-10 w-10 rounded-md object-contain bg-cream"
+      />
       <div className="leading-none">
         <div className="font-display text-xl tracking-wide text-primary">AMANET</div>
         <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Srebrenik</div>
@@ -145,6 +149,7 @@ function Logo() {
     </div>
   );
 }
+
 
 function LangSwitch({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   return (
@@ -187,10 +192,12 @@ function Hero() {
           </p>
           <div className="flex flex-wrap gap-3 mb-6">
             <a
-              href="#schedule"
+              href={WA_LINK(t.wa.msg)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-gold-gradient text-primary px-6 py-3.5 text-sm font-semibold shadow-gold hover:translate-y-[-1px] transition"
             >
-              <Calendar className="w-4 h-4" /> {t.hero.cta1}
+              <MessageCircle className="w-4 h-4" /> {t.hero.cta1}
             </a>
             <a
               href="#form"
@@ -199,6 +206,7 @@ function Hero() {
               {t.hero.cta2}
             </a>
           </div>
+
           <p className="text-xs text-primary-foreground/70 flex items-center gap-2">
             <MapPin className="w-3.5 h-3.5" /> {t.hero.note}
           </p>
@@ -533,33 +541,8 @@ function FAQ() {
   );
 }
 
-/* --------------------------- SCHEDULE --------------------------- */
-function Schedule() {
-  const { t } = useI18n();
-  return (
-    <section id="schedule" className="py-20 lg:py-28 bg-secondary/40">
-      <div className="mx-auto max-w-5xl px-5 lg:px-8">
-        <div className="relative rounded-3xl overflow-hidden bg-primary text-primary-foreground p-10 lg:p-14 shadow-elegant">
-          <div className="absolute inset-0 opacity-30">
-            <img src={srebrenikImg} alt="" loading="lazy" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/60" />
-          </div>
-          <div className="relative max-w-2xl">
-            <SectionEyebrow tone="dark">09</SectionEyebrow>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl mb-4">{t.schedule.title}</h2>
-            <p className="text-primary-foreground/85 mb-8">{t.schedule.lead}</p>
-            <a
-              href={CALENDLY_LINK}
-              className="inline-flex items-center gap-2 rounded-full bg-gold-gradient text-primary px-6 py-3.5 text-sm font-semibold shadow-gold hover:translate-y-[-1px] transition"
-            >
-              <Calendar className="w-4 h-4" /> {t.schedule.cta}
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+
+
 
 /* --------------------------- LEAD FORM --------------------------- */
 function LeadForm() {
@@ -591,7 +574,7 @@ function LeadForm() {
     <section id="form" className="py-20 lg:py-28">
       <div className="mx-auto max-w-3xl px-5 lg:px-8">
         <div className="text-center mb-10">
-          <SectionEyebrow>10</SectionEyebrow>
+          <SectionEyebrow>09</SectionEyebrow>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary">{t.form.title}</h2>
           <p className="text-muted-foreground mt-3">{t.form.subtitle}</p>
         </div>
@@ -699,7 +682,7 @@ function Contact() {
   return (
     <section id="contact" className="py-20 lg:py-28 bg-cream">
       <div className="mx-auto max-w-5xl px-5 lg:px-8 text-center">
-        <SectionEyebrow>11</SectionEyebrow>
+        <SectionEyebrow>10</SectionEyebrow>
         <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary mb-3">{t.contact.title}</h2>
         <p className="text-muted-foreground mb-10">{t.contact.primary}</p>
         <div className="grid sm:grid-cols-3 gap-5">
