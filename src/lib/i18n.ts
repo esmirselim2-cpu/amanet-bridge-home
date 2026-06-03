@@ -52,7 +52,7 @@ export const translations = {
     visit: {
       title: "Šta je posjeta?",
       lead:
-        "AMANET ne prodaje pojedinačne zadatke. AMANET prodaje posjete i prisutnost. Jedna posjeta podrazumijeva jedan izlazak na adresu korisnika.",
+        "AMANET ne nudi pojedinačne zadatke. AMANET nudi posjete i prisutnost. Jedna posjeta podrazumijeva jedan izlazak na adresu korisnika.",
       includesTitle: "Tokom jedne posjete mogu se obaviti:",
       includes: [
         "Kupovina namirnica",
@@ -64,6 +64,7 @@ export const translations = {
       ],
       foot: "Sve navedeno računa se kao jedna posjeta.",
     },
+
     money: {
       title: "Vaš novac ostaje pod vašom kontrolom.",
       lead:
@@ -171,12 +172,8 @@ export const translations = {
         no: "Ne",
       },
     },
-    schedule: {
-      title: "Zakažite besplatan 15-minutni informativni razgovor.",
-      lead: "Bez obaveze. Samo razgovor da razumijemo situaciju vaše porodice.",
-      cta: "Otvorite kalendar",
-    },
     contact: {
+
       title: "Kontakt",
       email: "Email",
       whatsapp: "WhatsApp",
@@ -243,7 +240,7 @@ export const translations = {
     visit: {
       title: "Was ist ein Besuch?",
       lead:
-        "AMANET verkauft keine einzelnen Aufgaben. AMANET verkauft Besuche und Präsenz. Ein Besuch bedeutet einen Termin an der Adresse Ihrer Eltern.",
+        "AMANET bietet keine einzelnen Aufgaben. AMANET bietet Besuche und Präsenz. Ein Besuch bedeutet einen Termin an der Adresse Ihrer Eltern.",
       includesTitle: "Während eines Besuchs können erledigt werden:",
       includes: [
         "Einkauf von Lebensmitteln",
@@ -255,6 +252,7 @@ export const translations = {
       ],
       foot: "All das zählt als ein Besuch.",
     },
+
     money: {
       title: "Ihr Geld bleibt unter Ihrer Kontrolle.",
       lead:
@@ -362,12 +360,8 @@ export const translations = {
         no: "Nein",
       },
     },
-    schedule: {
-      title: "Vereinbaren Sie ein kostenloses 15-minütiges Informationsgespräch.",
-      lead: "Ohne Verpflichtung. Nur ein Gespräch, um die Situation Ihrer Familie zu verstehen.",
-      cta: "Kalender öffnen",
-    },
     contact: {
+
       title: "Kontakt",
       email: "E-Mail",
       whatsapp: "WhatsApp",
