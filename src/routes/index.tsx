@@ -23,7 +23,7 @@ import heroImg from "@/assets/hero-elderly.jpg";
 import srebrenikImg from "@/assets/srebrenik.jpg";
 import visitImg from "@/assets/visit.jpg";
 import handsImg from "@/assets/hands.jpg";
-import logoAsset from "@/assets/amanet-logo.png.asset.json";
+
 
 
 export const Route = createFileRoute("/")({
@@ -136,7 +136,7 @@ function Logo() {
   return (
     <div className="flex items-center gap-2.5">
       <img
-        src={logoAsset.url}
+        src="/logo.png"
         alt="AMANET"
         width={40}
         height={40}
