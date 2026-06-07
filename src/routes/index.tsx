@@ -495,10 +495,10 @@ function Capacity() {
             <Users className="w-4 h-4" /> {t.capacity.counter}
           </div>
           <div className="font-display text-7xl text-primary">
-            10<span className="text-gold">/</span><span className="text-muted-foreground">10</span>
+            8<span className="text-gold">/</span><span className="text-muted-foreground">10</span>
           </div>
           <div className="mt-6 h-2 rounded-full bg-secondary overflow-hidden">
-            <div className="h-full w-full bg-gold-gradient" />
+            <div className="h-full w-[80%] bg-gold-gradient" />
           </div>
         </div>
       </div>
