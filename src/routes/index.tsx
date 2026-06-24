@@ -687,7 +687,7 @@ function Contact() {
         <p className="text-muted-foreground mb-10">{t.contact.primary}</p>
         <div className="grid sm:grid-cols-3 gap-5">
           <ContactCard icon={<Mail className="w-5 h-5" />} label={t.contact.email} value={EMAIL} href={`mailto:${EMAIL}`} />
-          <ContactCard icon={<Phone className="w-5 h-5" />} label={t.contact.whatsapp} value="+387 61 293 897" href={WA_LINK(t.wa.msg)} />
+          <ContactCard icon={<Phone className="w-5 h-5" />} label={t.contact.whatsapp} value="+387 67 121 9921" href={WA_LINK(t.wa.msg)} />
           <ContactCard icon={<MapPin className="w-5 h-5" />} label={t.contact.location} value={t.contact.locationVal} />
         </div>
       </div>
