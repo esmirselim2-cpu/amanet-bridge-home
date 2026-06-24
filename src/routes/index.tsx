@@ -720,7 +720,7 @@ function Footer() {
         <div className="text-sm space-y-2">
           <h4 className="font-display text-lg text-gold-soft mb-3">{t.contact.title}</h4>
           <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-primary-foreground/80 hover:text-gold-soft"><Mail className="w-4 h-4" />{EMAIL}</a>
-          <a href={WA_LINK(t.wa.msg)} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-foreground/80 hover:text-gold-soft"><Phone className="w-4 h-4" />+387 61 293 897</a>
+          <a href={WA_LINK(t.wa.msg)} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-foreground/80 hover:text-gold-soft"><Phone className="w-4 h-4" />+387 67 121 9921</a>
           <div className="flex items-center gap-2 text-primary-foreground/80"><MapPin className="w-4 h-4" />{t.contact.locationVal}</div>
         </div>
         <div className="text-sm">
