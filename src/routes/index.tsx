@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
   component: IndexPage,
 });
 
-const WA_NUMBER = "38761293897";
+const WA_NUMBER = "387671219921";
 const WA_LINK = (msg: string) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 const EMAIL = "amanetsrebrenik@gmail.com";
 
