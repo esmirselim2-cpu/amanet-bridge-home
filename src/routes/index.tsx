@@ -1,4 +1,3 @@
-import logo from "@/assets/logo.png";
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
@@ -186,14 +185,18 @@ function Logo() {
   return (
     <div className="flex items-center gap-2.5">
       <img
-        src={logo}
+        src="/logo.png"
         alt="AMANET"
         width={40}
         height={40}
         loading="eager"
         decoding="async"
         className="h-10 w-10 rounded-md object-contain bg-cream"
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).src = "/favicon.ico";
+        }}
       />
+
       <div className="leading-none">
         <div className="font-display text-xl tracking-wide text-primary">
           AMANET
@@ -205,7 +208,6 @@ function Logo() {
     </div>
   );
 }
-
 /* --------------------------- LANG SWITCH --------------------------- */
 function LangSwitch({
   lang,
