@@ -132,11 +132,13 @@ function Nav() {
   );
 }
 
+import logo from "@/assets/logo.png";
+
 function Logo() {
   return (
     <div className="flex items-center gap-2.5">
       <img
-        src/assets/logo.png ✔
+        src={logo}
         alt="AMANET"
         width={40}
         height={40}
@@ -144,7 +146,6 @@ function Logo() {
         decoding="async"
         className="h-10 w-10 rounded-md object-contain bg-cream"
         onError={(e) => {
-          // fallback ako Cloudflare/route ne servira asset kako treba
           (e.currentTarget as HTMLImageElement).src = "/favicon.ico";
         }}
       />
