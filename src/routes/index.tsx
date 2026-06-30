@@ -136,7 +136,7 @@ function Logo() {
   return (
     <div className="flex items-center gap-2.5">
       <img
-        src="/logo.png?v=1"
+        src/assets/logo.png ✔
         alt="AMANET"
         width={40}
         height={40}
