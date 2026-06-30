@@ -181,6 +181,26 @@ function Nav() {
   );
 }
 
+function Logo() {
+  return (
+    <div className="flex items-center gap-2.5">
+      <img
+        src={logo}
+        alt="AMANET"
+        className="h-10 w-10 rounded-md object-contain bg-cream"
+      />
+
+      <div className="leading-none">
+        <div className="font-display text-xl tracking-wide text-primary">
+          AMANET
+        </div>
+        <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+          Srebrenik
+        </div>
+      </div>
+    </div>
+  );
+}
 /* --------------------------- LANG SWITCH --------------------------- */
 function LangSwitch({
   lang,
