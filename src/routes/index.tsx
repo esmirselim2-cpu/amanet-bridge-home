@@ -1,6 +1,6 @@
-import logo from "@/assets/logo.png";
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+
 import {
   Phone,
   Mail,
@@ -19,12 +19,15 @@ import {
   Sparkles,
   Users,
 } from "lucide-react";
+
 import { I18nContext, translations, type Lang, useI18n } from "@/lib/i18n";
+
+// assets (SVE iz Vite pipeline-a)
+import logo from "@/assets/logo.png";
 import heroImg from "@/assets/hero-elderly.jpg";
 import srebrenikImg from "@/assets/srebrenik.jpg";
 import visitImg from "@/assets/visit.jpg";
 import handsImg from "@/assets/hands.jpg";
-
 
 
 export const Route = createFileRoute("/")({
