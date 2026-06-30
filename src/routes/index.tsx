@@ -1,6 +1,6 @@
+import logo from "@/assets/logo.png";
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-
 import {
   Phone,
   Mail,
@@ -19,24 +19,30 @@ import {
   Sparkles,
   Users,
 } from "lucide-react";
-
 import { I18nContext, translations, type Lang, useI18n } from "@/lib/i18n";
-
-// assets (SVE iz Vite pipeline-a)
-import logo from "@/assets/logo.png";
 import heroImg from "@/assets/hero-elderly.jpg";
 import srebrenikImg from "@/assets/srebrenik.jpg";
 import visitImg from "@/assets/visit.jpg";
 import handsImg from "@/assets/hands.jpg";
 
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AMANET — Kad vi niste tu, mi jesmo. | Podrška porodicama u dijaspori" },
-      { name: "description", content: "AMANET pruža premium concierge podršku porodicama iz dijaspore koje imaju roditelje u Srebreniku i okolini — redovne posjete, kupovina lijekova, plaćanje računa, pratnja doktoru." },
+      {
+        title:
+          "AMANET — Kad vi niste tu, mi jesmo. | Podrška porodicama u dijaspori",
+      },
+      {
+        name: "description",
+        content:
+          "AMANET pruža premium concierge podršku porodicama iz dijaspore koje imaju roditelje u Srebreniku i okolini — redovne posjete, kupovina lijekova, plaćanje računa, pratnja doktoru.",
+      },
       { property: "og:title", content: "AMANET — Kad vi niste tu, mi jesmo." },
-      { property: "og:description", content: "Podrška porodicama iz dijaspore koje imaju roditelje u Srebreniku i okolini." },
+      {
+        property: "og:description",
+        content:
+          "Podrška porodicama iz dijaspore koje imaju roditelje u Srebreniku i okolini.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:image", content: heroImg },
     ],
@@ -46,19 +52,28 @@ export const Route = createFileRoute("/")({
 });
 
 const WA_NUMBER = "387671219921";
-const WA_LINK = (msg: string) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+const WA_LINK = (msg: string) =>
+  `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+
 const EMAIL = "amanetsrebrenik@gmail.com";
 
-
+/* ----------------------------- PAGE ----------------------------- */
 function IndexPage() {
   const [lang, setLang] = useState<Lang>("bs");
+
   useEffect(() => {
-    const saved = (typeof window !== "undefined" && (localStorage.getItem("amanet-lang") as Lang | null)) || null;
+    const saved =
+      (typeof window !== "undefined" &&
+        (localStorage.getItem("amanet-lang") as Lang | null)) ||
+      null;
+
     if (saved === "bs" || saved === "de") setLang(saved);
   }, []);
+
   useEffect(() => {
     if (typeof document !== "undefined") document.documentElement.lang = lang;
-    if (typeof window !== "undefined") localStorage.setItem("amanet-lang", lang);
+    if (typeof window !== "undefined")
+      localStorage.setItem("amanet-lang", lang);
   }, [lang]);
 
   const t = useMemo(() => translations[lang], [lang]);
@@ -78,7 +93,6 @@ function IndexPage() {
           <Capacity />
           <FAQ />
           <LeadForm />
-
           <Contact />
         </main>
         <Footer />
@@ -92,41 +106,72 @@ function IndexPage() {
 function Nav() {
   const { t, lang, setLang } = useI18n();
   const [open, setOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-background/85 border-b border-border/60">
       <div className="mx-auto max-w-7xl px-5 lg:px-8 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2">
           <Logo />
         </a>
+
         <nav className="hidden md:flex items-center gap-8 text-sm">
-          <a href="#how" className="hover:text-primary transition">{t.nav.how}</a>
-          <a href="#packages" className="hover:text-primary transition">{t.nav.packages}</a>
-          <a href="#faq" className="hover:text-primary transition">{t.nav.faq}</a>
-          <a href="#contact" className="hover:text-primary transition">{t.nav.contact}</a>
+          <a href="#how" className="hover:text-primary transition">
+            {t.nav.how}
+          </a>
+          <a href="#packages" className="hover:text-primary transition">
+            {t.nav.packages}
+          </a>
+          <a href="#faq" className="hover:text-primary transition">
+            {t.nav.faq}
+          </a>
+          <a href="#contact" className="hover:text-primary transition">
+            {t.nav.contact}
+          </a>
         </nav>
+
         <div className="flex items-center gap-3">
           <LangSwitch lang={lang} setLang={setLang} />
+
           <a
             href="#form"
             className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:opacity-95 transition shadow-soft"
           >
             {t.nav.cta}
           </a>
-          <button className="md:hidden p-2" onClick={() => setOpen(!open)} aria-label="menu">
-            <div className="w-5 h-0.5 bg-foreground mb-1"></div>
-            <div className="w-5 h-0.5 bg-foreground mb-1"></div>
-            <div className="w-5 h-0.5 bg-foreground"></div>
+
+          <button
+            className="md:hidden p-2"
+            onClick={() => setOpen(!open)}
+            aria-label="menu"
+          >
+            <div className="w-5 h-0.5 bg-foreground mb-1" />
+            <div className="w-5 h-0.5 bg-foreground mb-1" />
+            <div className="w-5 h-0.5 bg-foreground" />
           </button>
         </div>
       </div>
+
       {open && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="px-5 py-4 flex flex-col gap-4 text-sm">
-            <a href="#how" onClick={() => setOpen(false)}>{t.nav.how}</a>
-            <a href="#packages" onClick={() => setOpen(false)}>{t.nav.packages}</a>
-            <a href="#faq" onClick={() => setOpen(false)}>{t.nav.faq}</a>
-            <a href="#contact" onClick={() => setOpen(false)}>{t.nav.contact}</a>
-            <a href="#form" onClick={() => setOpen(false)} className="rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-center">
+            <a href="#how" onClick={() => setOpen(false)}>
+              {t.nav.how}
+            </a>
+            <a href="#packages" onClick={() => setOpen(false)}>
+              {t.nav.packages}
+            </a>
+            <a href="#faq" onClick={() => setOpen(false)}>
+              {t.nav.faq}
+            </a>
+            <a href="#contact" onClick={() => setOpen(false)}>
+              {t.nav.contact}
+            </a>
+
+            <a
+              href="#form"
+              onClick={() => setOpen(false)}
+              className="rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-center"
+            >
               {t.nav.cta}
             </a>
           </div>
@@ -136,7 +181,7 @@ function Nav() {
   );
 }
 
-
+/* ----------------------------- LOGO ----------------------------- */
 function Logo() {
   return (
     <div className="flex items-center gap-2.5">
@@ -148,11 +193,7 @@ function Logo() {
         loading="eager"
         decoding="async"
         className="h-10 w-10 rounded-md object-contain bg-cream"
-        onError={(e) => {
-          (e.currentTarget as HTMLImageElement).src = "/favicon.ico";
-        }}
       />
-
       <div className="leading-none">
         <div className="font-display text-xl tracking-wide text-primary">
           AMANET
@@ -165,8 +206,14 @@ function Logo() {
   );
 }
 
-
-function LangSwitch({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
+/* --------------------------- LANG SWITCH --------------------------- */
+function LangSwitch({
+  lang,
+  setLang,
+}: {
+  lang: Lang;
+  setLang: (l: Lang) => void;
+}) {
   return (
     <div className="inline-flex items-center rounded-full border border-border bg-card p-0.5 text-xs font-medium">
       {(["bs", "de"] as const).map((l) => (
@@ -174,7 +221,9 @@ function LangSwitch({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void 
           key={l}
           onClick={() => setLang(l)}
           className={`px-3 py-1.5 rounded-full transition ${
-            lang === l ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+            lang === l
+              ? "bg-primary text-primary-foreground"
+              : "text-muted-foreground hover:text-foreground"
           }`}
         >
           {l === "bs" ? "BOS" : "DE"}
@@ -187,64 +236,40 @@ function LangSwitch({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void 
 /* ----------------------------- HERO ----------------------------- */
 function Hero() {
   const { t } = useI18n();
+
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="absolute inset-0 bg-hero-gradient" />
-      <div className="absolute inset-0 opacity-[0.18] mix-blend-screen" style={{
-        backgroundImage: `radial-gradient(circle at 20% 30%, var(--color-gold) 0px, transparent 1px), radial-gradient(circle at 70% 80%, var(--color-gold) 0px, transparent 1px)`,
-        backgroundSize: "44px 44px",
-      }} />
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 pt-16 pb-24 lg:pt-24 lg:pb-32 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-7 text-primary-foreground animate-fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-gold-soft mb-6">
-            <Sparkles className="w-3 h-3" /> {t.hero.eyebrow}
-          </div>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] mb-6">
             {t.hero.title}
           </h1>
-          <p className="text-base sm:text-lg text-primary-foreground/85 max-w-2xl leading-relaxed mb-8">
-            {t.hero.subtitle}
-          </p>
-          <div className="flex flex-wrap gap-3 mb-6">
+
+          <p className="text-base sm:text-lg mb-8">{t.hero.subtitle}</p>
+
+          <div className="flex flex-wrap gap-3">
             <a
               href={WA_LINK(t.wa.msg)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-gold-gradient text-primary px-6 py-3.5 text-sm font-semibold shadow-gold hover:translate-y-[-1px] transition"
+              className="rounded-full bg-gold-gradient px-6 py-3 text-sm font-semibold"
             >
-              <MessageCircle className="w-4 h-4" /> {t.hero.cta1}
+              {t.hero.cta1}
             </a>
+
             <a
               href="#form"
-              className="inline-flex items-center gap-2 rounded-full border border-white/30 text-primary-foreground px-6 py-3.5 text-sm font-semibold hover:bg-white/10 transition"
+              className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold"
             >
               {t.hero.cta2}
             </a>
           </div>
-
-          <p className="text-xs text-primary-foreground/70 flex items-center gap-2">
-            <MapPin className="w-3.5 h-3.5" /> {t.hero.note}
-          </p>
-          <div className="mt-10 pt-6 border-t border-white/10 max-w-md">
-            <p className="font-display italic text-gold-soft text-lg">„{t.hero.slogan}“</p>
-          </div>
         </div>
-        <div className="lg:col-span-5 relative animate-fade-up">
-          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-elegant ring-1 ring-gold/20">
-            <img src={heroImg} alt="" className="w-full h-full object-cover" width={1536} height={1024} />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
-          </div>
-          <div className="absolute -bottom-6 -left-6 bg-card text-card-foreground rounded-xl p-4 shadow-elegant w-56 hidden sm:block">
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center text-primary">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-xs text-muted-foreground">100%</div>
-                <div className="text-sm font-medium">Transparentno</div>
-              </div>
-            </div>
-          </div>
+
+        <div className="lg:col-span-5">
+          <img
+            src={heroImg}
+            className="rounded-2xl w-full h-full object-cover"
+          />
         </div>
       </div>
     </section>
