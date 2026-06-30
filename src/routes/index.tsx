@@ -140,11 +140,22 @@ function Logo() {
         alt="AMANET"
         width={40}
         height={40}
+        loading="eager"
+        decoding="async"
         className="h-10 w-10 rounded-md object-contain bg-cream"
+        onError={(e) => {
+          // fallback ako Cloudflare/route ne servira asset kako treba
+          (e.currentTarget as HTMLImageElement).src = "/favicon.ico";
+        }}
       />
+
       <div className="leading-none">
-        <div className="font-display text-xl tracking-wide text-primary">AMANET</div>
-        <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Srebrenik</div>
+        <div className="font-display text-xl tracking-wide text-primary">
+          AMANET
+        </div>
+        <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+          Srebrenik
+        </div>
       </div>
     </div>
   );
